@@ -1,0 +1,15 @@
+{
+  "name": "revproxy",
+  "version": "1.0.0",
+  "description": "A simple reverse proxy. It routes requests to different hosts based on the request path.",
+  "author": "Valerio Iacobucci <valerio@valerioiacobucci.com>",
+  "bin": {
+    "revproxy": "./revproxy.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "command-line-args": "^5.2.1",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6"
+  }
+}
