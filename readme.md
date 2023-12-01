@@ -31,5 +31,5 @@ You can add a new configuration with the `-a` flag or with `--add`. The syntax i
 
 This example shows all options:
 
-`revproxy -p 4000 -c proxies-1.json --add '/cane,http://localhost:8083,/casa,http://localhost:8084' --config proxies-2.json -a '/capra,http://localhost:8085'`
+`revproxy -p 4000 -c proxies-1.json --add '/cane,http://localhost:8083,/casa,http://localhost:8084/cane' --config proxies-2.json -a '/capra/criceto,http://localhost:8085/criceto'`
 

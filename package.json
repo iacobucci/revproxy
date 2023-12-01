@@ -4,7 +4,8 @@
   "description": "A simple reverse proxy. It routes requests to different hosts based on the request path.",
   "author": "Valerio Iacobucci <valerio@valerioiacobucci.com>",
   "scripts": {
-    "build": "webpack --config webpack.config.js ;sed -i '1s/^/\\#\\!\\/usr\\/bin\\/env node\\n/' ./dist/revproxy-bundle.js ; chmod +x ./dist/revproxy-bundle.js"
+    "build": "webpack --config webpack.config.js ;sed -i '1s/^/\\#\\!\\/usr\\/bin\\/env node\\n/' ./dist/revproxy-bundle.js ; chmod +x ./dist/revproxy-bundle.js",
+    "publish": "npm run build && npm publish"
   },
   "bin": {
     "revproxy": "./dist/revproxy-bundle.js"
@@ -16,5 +17,6 @@
     "http-proxy-middleware": "^2.0.6",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
-  }
+  },
+  "dependencies": {}
 }

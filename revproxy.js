@@ -6,9 +6,16 @@ const app = express();
 const path = require('path');
 
 function createProxy(app, path, target) {
+    const targetUrl = new URL(target);
+    const targetBase = targetUrl.origin;
+	const targetPath = targetUrl.pathname;
+
 	const apiProxy = createProxyMiddleware(path, {
 		target: target,
 		changeOrigin: true,
+        pathRewrite: (requestPath, req) => {
+            return requestPath.replace(path, '');
+        },
 	});
 	app.use(path, apiProxy);
 }
@@ -22,7 +29,6 @@ const optionDefinitions = [
 	{ name: 'port', alias: 'p', type: Number, multiple: false, defaultOption: false },
 	{ name: 'add', alias: 'a', type: routeIpParse, multiple: true },
 ]
-
 
 // splititng by ; and then by , is not the best way to do this
 // urls including ; or , will break this
